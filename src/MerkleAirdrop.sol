@@ -43,7 +43,7 @@ contract MerkleAirdrop {
 
     function claim(address user, uint256 amount, bytes32[] calldata merkleProof) external {
         // checks
-        if (s_alreadyClaimed[user] = true) {
+        if (s_alreadyClaimed[user]) {
             revert MerkleAirdrop__UserAlredyClaimed();
         }
         bytes32 leaf = keccak256(bytes.concat(keccak256(abi.encode(user, amount))));
