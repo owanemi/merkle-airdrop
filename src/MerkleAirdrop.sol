@@ -60,13 +60,11 @@ contract MerkleAirdrop {
     /*//////////////////////////////////////////////////////////////
                             GETTER FUNCTIONS
     //////////////////////////////////////////////////////////////*/
-    function getMerkleRoot() external view returns(bytes32) {
+    function getMerkleRoot() external view returns (bytes32) {
         return i_merkleRoot;
     }
 
-    function getAirdropToken() external view returns(IERC20) {
+    function getAirdropToken() external view returns (IERC20) {
         return i_tokenToAirdrop;
     }
-
-    
 }

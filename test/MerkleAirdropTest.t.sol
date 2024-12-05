@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-import { Test, console } from "lib/forge-std/src/Test.sol";
-import { MerkleAirdrop } from "../src/MerkleAirdrop.sol";
+import {Test, console} from "lib/forge-std/src/Test.sol";
+import {MerkleAirdrop} from "../src/MerkleAirdrop.sol";
 import {IERC20, SafeERC20} from "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol";
 
 contract MerkleAirdropTest is Test {
@@ -17,7 +17,7 @@ contract MerkleAirdropTest is Test {
     address constant NEMI_TOKEN_OWNER = 0x48CeF35f4aB78D3f24d73E2B158762aCc671302E;
     uint256 userPrivKey;
     uint256 AMOUNT = 25 * 1e18;
-    uint256 AMOUNT_TO_SEND = (25 * 1e18) *4;
+    uint256 AMOUNT_TO_SEND = (25 * 1e18) * 4;
 
     bytes32 proof1 = 0x0fd7c981d39bece61f7499702bf59b3114a90e66b51ba2c53abdf7b62986c00a;
     bytes32 proof2 = 0xe5ebd1e1b5a5478a944ecab36a9a954ac3b6b8216875f6524caa7a1d87096576;
@@ -28,7 +28,6 @@ contract MerkleAirdropTest is Test {
         airdrop = new MerkleAirdrop(ROOT, TOKEN);
         (user, userPrivKey) = makeAddrAndKey("user");
         // TOKEN.transfer(address(airdrop), AMOUNT_TO_SEND);
-
     }
 
     function testUsersCanClaim() public {
